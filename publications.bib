@@ -1,462 +1,465 @@
-@inproceedings{d8ba37f5394c45cd9a3cc355e1d60ae4,
-  title     = "Effect-driven Flow Analysis",
-  abstract  = "Traditional machine-based static analyses use a worklist algorithm to explore the analysis state space, and compare each state in the worklist against a set of seen states as part of their fixed-point computation. This may require many state comparisons, which gives rise to a computational overhead. Even an analysis with a global store has to clear its set of seen states each time the store updates because of allocation or side-effects, which results in more states being reanalyzed and compared.In this work we present a static analysis technique, ModF, that does not rely on a set of seen states, and apply it to a machine-based analysis with global-store widening. Modf analyzes one function execution at a time to completion while tracking read, write, and call effects. These effects trigger the analysis of other function executions, and the analysis terminates when no new effects can be discovered.We compared Modf to a traditional machine-based analysis implementation on a set of 20 benchmark programs and found that Modf is faster for 17 programs with speedups ranging between 1.4x and 12.3x. Furthermore, Modf exhibits similar precision as the traditional analysis on most programs and yields state graphs that are comparable in size.",
-  keywords  = "Abstract interpretation, Effects, Program analysis, Static analysis",
-  author    = "Jens Nicolay and Quentin Sti{\'e}venart and {De Meuter}, Wolfgang and {De Roover}, Coen",
-  year      = "2019",
-  month     = "1",
-  day       = "13",
-  doi       = "https://doi.org/10.1007/978-3-030-11245-5_12",
-  language  = "English",
-  isbn      = "978-3-030-11244-8",
-  series    = "Lecture Notes in Computer Science (including subseries Lecture Notes in Artificial Intelligence and Lecture Notes in Bioinformatics)",
-  publisher = "Springer",
-  pages     = "247--274",
-  editor    = "Ruzica Piskac and Constantin Enea",
-  booktitle = "Verification, Model Checking, and Abstract Interpretation - 20th International Conference, VMCAI 2019, Proceedings",
+@article{DBLP:journals/jss/StievenartNMR19,
+  author    = {Quentin Sti{\'{e}}venart and
+               Jens Nicolay and
+               Wolfgang De Meuter and
+               Coen De Roover},
+  title     = {A general method for rendering static analyses for diverse concurrency
+               models modular},
+  journal   = {J. Syst. Softw.},
+  volume    = {147},
+  pages     = {17--45},
+  year      = {2019},
+  url       = {https://doi.org/10.1016/j.jss.2018.10.001},
+  doi       = {10.1016/j.jss.2018.10.001},
+  timestamp = {Mon, 24 Feb 2020 00:00:00 +0100},
+  biburl    = {https://dblp.org/rec/journals/jss/StievenartNMR19.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
 }
 
-
-@inproceedings{631a22d0d42d41eb8afbba0e59334c82,
-  title     = "GuardiaML: Machine Learning-Assisted Dynamic Information Flow Control",
-  abstract  = "Developing JavaScript and web applications with confidentiality and integrity guarantees is challenging. Information flow control enables the enforcement of such guarantees. However, the integration of this technique into software tools used by developers in their workflow is missing. In this paper we present GuardiaML, a machine learning-assisted dynamic information flow control tool for JavaScript web applications. GuardiaML enables developers to detect unwanted information flow from sensitive sources to public sinks. It can handle the DOM and interaction with internal and external libraries and services. Because the specification of sources and sinks can be tedious, GuardiaML assists in this process by suggesting the tagging of sources and sinks via a machine learning component.",
-  keywords  = "Information Flow Control, JavaScript Security, Machine Learning, Programming Languages",
-  author    = "{Scull Pupo}, {Angel Luis} and Jens Nicolay and Kyriakos Efthymiadis and Ann Nowe and {De Roover}, Coen and {Gonzalez Boix}, Elisa",
-  year      = "2019",
-  month     = "3",
-  day       = "15",
-  doi       = "10.1109/SANER.2019.8667979",
-  language  = "English",
-  isbn      = "978-1-7281-0591-8",
-  series    = "SANER 2019 - Proceedings of the 2019 IEEE 26th International Conference on Software Analysis, Evolution, and Reengineering",
-  publisher = "IEEE",
-  pages     = "624--628",
-  editor    = "Emad Shihab and David Lo and Xinyu Wang",
-  booktitle = "Proceedings of the 26th International Conference on Software Analysis, Evolution, and Reengineering (SANER 2019)",
+@inproceedings{DBLP:conf/vmcai/NicolaySMR19,
+  author    = {Jens Nicolay and
+               Quentin Sti{\'{e}}venart and
+               Wolfgang De Meuter and
+               Coen De Roover},
+  editor    = {Constantin Enea and
+               Ruzica Piskac},
+  title     = {Effect-Driven Flow Analysis},
+  booktitle = {Proceedings of the 20th International Conference on Verification, Model Checking, and Abstract Interpretation, {VMCAI} 2019, Cascais, Portugal, January 13-15, 2019,
+               Proceedings},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {11388},
+  pages     = {247--274},
+  publisher = {Springer},
+  year      = {2019},
+  url       = {https://doi.org/10.1007/978-3-030-11245-5\_12},
+  doi       = {10.1007/978-3-030-11245-5\_12},
+  timestamp = {Tue, 14 May 2019 10:00:43 +0200},
+  biburl    = {https://dblp.org/rec/conf/vmcai/NicolaySMR19.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
 }
 
-
-@article{5b919e4bb1964f5187f715397c0519e7,
-  title     = "A General Method for Rendering Static Analyses for Diverse Concurrency Models Modular",
-  abstract  = "Shared-memory multi-threading and the actor model both share the notion of processes featuring communication, respectively by modifying shared state and by sending messages. Existing static analyses for concurrent programs either model every possible process interleavings and therefore suffer from the state explosion problem, or feature modularity but lack in precision or in their support for dynamic processes. In this paper we present a general method for obtaining a scalable analysis of concurrent programs featuring dynamic process creation. Our MODCONC method transforms an abstract concurrent semantics modeling processes and communication into a modular static analysis treating the behavior of processes separately from their communication. We present MODCONC in a generic way and demonstrate its applicability by instantiating it for multi-threaded and actor-based programs. The resulting analyses are evaluated in terms of precision, performance, scalability, and soundness. While a typical non-modular static analysis time out on half of our 56 benchmarks with a 30 min timeout, MODCONC analyses successfully analyze all of them in less than 30 s, while remaining on par in terms of precision. Analyzing concurrent processes in isolation while modeling their communications is the key ingredient in supporting scalable analysis of concurrent programs featuring dynamic process communication.",
-  keywords  = "Actors, Concurrency, Modular analysis, Static analysis, Threads",
-  author    = "Quentin Sti{\'e}venart and Jens Nicolay and {De Meuter}, Wolfgang and {De Roover}, Coen",
-  year      = "2019",
-  month     = "1",
-  day       = "1",
-  doi       = "https://doi.org/10.1016/j.jss.2018.10.001",
-  language  = "English",
-  volume    = "147",
-  pages     = "17--45",
-  journal   = "Journal of Systems and Software",
-  issn      = "0164-1212",
-  publisher = "Elsevier Inc.",
+@inproceedings{DBLP:conf/wcre/PupoNENRB19,
+  author    = {Angel Luis Scull Pupo and
+               Jens Nicolay and
+               Kyriakos Efthymiadis and
+               Ann Now{\'{e}} and
+               Coen De Roover and
+               Elisa Gonzalez Boix},
+  editor    = {Xinyu Wang and
+               David Lo and
+               Emad Shihab},
+  title     = {{GUARDIAML:} Machine Learning-Assisted Dynamic Information Flow Control},
+  booktitle = {26th {IEEE} International Conference on Software Analysis, Evolution
+               and Reengineering, {SANER} 2019, Hangzhou, China, February 24-27,
+               2019},
+  pages     = {624--628},
+  publisher = {{IEEE}},
+  year      = {2019},
+  url       = {https://doi.org/10.1109/SANER.2019.8667979},
+  doi       = {10.1109/SANER.2019.8667979},
+  timestamp = {Wed, 16 Oct 2019 14:14:53 +0200},
+  biburl    = {https://dblp.org/rec/conf/wcre/PupoNENRB19.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
 }
 
-
-@inproceedings{95964e3d47f144cfaa6763d6e3f93156,
-  title     = "Building IoT Systems Using Distributed First-Class Reactive Programming",
-  abstract  = "Contemporary IoT systems are challenging to develop, deploy, and maintain. This is because of their ever-increasing scale, dynamic network topologies, heterogeneity and resource constraints of the involved devices, and failures that may occur as a result of these characteristics. Existing approaches are either not at the right level of abstraction, require developers to learn specialized languages, or miss certain key features to address all these challenges in a uniform manner. In this paper we leverage reactive programming and code mobility to support the entire life-cycle of large-scale IoT systems. Our approach is based on existing programming technologies and offers simple and composable abstractions to developers. We implemented our approach in a middleware called Potato and used it to develop and deploy an IoT application on a Raspberry Pi cluster. We found that using Potato reduces much of the accidental complexity associated with developing and deploying IoT systems, resulting in clean and maintainable programs.",
-  keywords  = "Code mobility, Iot, Observables, Reactive programming",
-  author    = "{De Troyer}, Christophe and Jens Nicolay and {De Meuter}, Wolfgang",
-  year      = "2018",
-  month     = "12",
-  day       = "26",
-  doi       = "10.1109/CloudCom2018.2018.00045",
-  language  = "English",
-  isbn      = "978-1-5386-7899-2",
-  volume    = "2018-December",
-  series    = "Proceedings of the International Conference on Cloud Computing Technology and Science, CloudCom",
-  publisher = "IEEE",
-  pages     = "185--192",
-  booktitle = "Proceedings - IEEE 10th International Conference on Cloud Computing Technology and Science, CloudCom 2018",
+@inproceedings{DBLP:conf/cloudcom/TroyerNM18,
+  author    = {Christophe De Troyer and
+               Jens Nicolay and
+               Wolfgang De Meuter},
+  title     = {Building IoT Systems Using Distributed First-Class Reactive Programming},
+  booktitle = {2018 {IEEE} International Conference on Cloud Computing Technology
+               and Science, CloudCom 2018, Nicosia, Cyprus, December 10-13, 2018},
+  pages     = {185--192},
+  publisher = {{IEEE} Computer Society},
+  year      = {2018},
+  url       = {https://doi.org/10.1109/CloudCom2018.2018.00045},
+  doi       = {10.1109/CloudCom2018.2018.00045},
+  timestamp = {Wed, 16 Oct 2019 14:14:56 +0200},
+  biburl    = {https://dblp.org/rec/conf/cloudcom/TroyerNM18.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
 }
 
-
-@inproceedings{c817e2f7d05046959458424f7354c7c6,
-  title     = "GUARDIA: specification and enforcement of javascript security policies without VM modifications",
-  abstract  = "The complex architecture of browser technologies and dynamic characteristics of JavaScript make it difficult to ensure security in client-side web applications. Browser-level security policies alone are not sufficient because it is difficult to apply them correctly and they can be bypassed. As a result, they need to be completed by application-level security policies.In this paper, we survey existing solutions for specifying and enforcing application-level security policies for client-side web applications, and distill a number of desirable features. Based on these features we developed Guardia, a framework for declaratively specifying and dynamically enforcing application-level security policies for JavaScript web applications without requiring VM modifications. We describe Guardia enforcement mechanism by means of JavaScript reflection with respect to three important security properties (transparency, tamper-proofness, and completeness). We also use Guardia to specify and deploy 12 access control policies discussed in related work in three experimental applications that are representative of real-world applications. Our experiments indicate that Guardia is correct, transparent, and tamper-proof, while only incurring a reasonable runtime overhead.",
-  keywords  = "DSL, JavaScript, Language design, Reflection, Runtime Enforcement, Security Policy, Web Security",
-  author    = "{Scull Pupo}, {Angel Luis} and Jens Nicolay and {Gonzalez Boix}, Elisa",
-  year      = "2018",
-  month     = "9",
-  day       = "12",
-  doi       = "10.1145/3237009.3237025",
-  language  = "English",
-  booktitle = "Proceedings of the 15th International Conference on Managed Languages & Runtimes",
-  publisher = "Association for Computing Machinery (ACM)",
-  address   = "United States",
+@inproceedings{DBLP:conf/pppj/PupoNB18,
+  author    = {Angel Luis Scull Pupo and
+               Jens Nicolay and
+               Elisa Gonzalez Boix},
+  editor    = {Eli Tilevich and
+               Hanspeter M{\"{o}}ssenb{\"{o}}ck},
+  title     = {{GUARDIA:} specification and enforcement of javascript security policies
+               without {VM} modifications},
+  booktitle = {Proceedings of the 15th International Conference on Managed Languages
+               {\&} Runtimes, ManLang 2018, Linz, Austria, September 12-14, 2018},
+  pages     = {17:1--17:15},
+  publisher = {{ACM}},
+  year      = {2018},
+  url       = {https://doi.org/10.1145/3237009.3237025},
+  doi       = {10.1145/3237009.3237025},
+  timestamp = {Mon, 26 Nov 2018 15:05:58 +0100},
+  biburl    = {https://dblp.org/rec/conf/pppj/PupoNB18.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
 }
 
-
-@inproceedings{77c9c152afdf439588029bfde883cb0d,
-  title     = "Practical Information Flow Control for Web Applications",
-  abstract  = "Current browser-level security solutions do not provide a mechanism for information flow control (IFC) policies. As such, they need to be combined with language-based security approaches. Practical implementations for ICF enforcement remains a challenge when the full spectrum of web applications features is taken into account (i.e. JavaScript features, web APIs, DOM, portability, performance, etc.). In this work we develop Gifc, a permissive-upgrade-based inlined monitoring mechanism to detect unwanted information flow in web applications. Gifc covers a wide range of JavaScript features that give rise to implicit flows. In contrast to related work, Gifc also handles dynamic code evaluation online, and it features an API function model mechanism that enables information tracking through APIs calls. As a result, Gifc can handle information flows that use DOM nodes as channels of information. We validate Gifc by means of a benchmark suite from literature specifically designed for information flow verification, which we also extend. We compare Gifc qualitatively with respect to closest related work and show that Gifc performs better at detecting unwanted implicit flows.",
-  keywords  = "Security, JavaScript, Web Applications",
-  author    = "{Scull Pupo}, {Angel Luis} and Laurent Christophe and Jens Nicolay and {De Roover}, Coen and {Gonzalez Boix}, Elisa",
-  year      = "2018",
-  month     = "11",
-  language  = "English",
-  isbn      = "978-3-030-03768-0",
-  volume    = "11237",
-  pages     = "372--388",
-  booktitle = "Lecture Notes in Computer Science",
-  publisher = "Springer",
+@inproceedings{DBLP:conf/rv/PupoCNRB18,
+  author    = {Angel Luis Scull Pupo and
+               Laurent Christophe and
+               Jens Nicolay and
+               Coen De Roover and
+               Elisa Gonzalez Boix},
+  editor    = {Christian Colombo and
+               Martin Leucker},
+  title     = {Practical Information Flow Control for Web Applications},
+  booktitle = {Runtime Verification - 18th International Conference, {RV} 2018, Limassol,
+               Cyprus, November 10-13, 2018, Proceedings},
+  series    = {Lecture Notes in Computer Science},
+  volume    = {11237},
+  pages     = {372--388},
+  publisher = {Springer},
+  year      = {2018},
+  url       = {https://doi.org/10.1007/978-3-030-03769-7\_21},
+  doi       = {10.1007/978-3-030-03769-7\_21},
+  timestamp = {Fri, 31 Jan 2020 21:32:25 +0100},
+  biburl    = {https://dblp.org/rec/conf/rv/PupoCNRB18.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
 }
 
-
-@conference{e27f01fdd1ff441d8c59fc7ba489ed5f,
-  title    = "Toward Hybrid Enforcement of Security Policies in JavaScript Applications",
-  author   = "{Scull Pupo}, {Angel Luis} and Jens Nicolay and {Gonzalez Boix}, Elisa",
-  year     = "2018",
-  month    = "9",
-  day      = "12",
-  language = "English",
-  note     = "null ; Conference date: 11-09-2018 Through 13-09-2018",
-  url      = "http://ssw.jku.at/manlang18/",
+@article{DBLP:journals/cl/EsSNDR17,
+  author    = {Noah Van Es and
+               Quentin Sti{\'{e}}venart and
+               Jens Nicolay and
+               Theo D'Hondt and
+               Coen De Roover},
+  title     = {Implementing a performant scheme interpreter for the web in asm.js},
+  journal   = {Comput. Lang. Syst. Struct.},
+  volume    = {49},
+  pages     = {62--81},
+  year      = {2017},
+  url       = {https://doi.org/10.1016/j.cl.2017.02.002},
+  doi       = {10.1016/j.cl.2017.02.002},
+  timestamp = {Tue, 11 Feb 2020 00:00:00 +0100},
+  biburl    = {https://dblp.org/rec/journals/cl/EsSNDR17.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
 }
 
-
-@misc{cd9c5a4646c048adb2540bae02d20c87,
-  title    = "Mailbox Abstractions for Static Analysis of Actor Programs (Artifact)",
-  abstract = "This artifact is based on Scala-AM, a static analysis framework relying on the Abstracting Abstract Machines approach. This version of the framework is extended to support actor-based programs, written in a variant of Scheme. The sound static analysis is performed in order to verify the absence of errors in actor-based program, and to compute upper bounds on actor's mailboxes. We developed several mailbox abstractions with which the static analysis can be run, and evaluate the precision of the technique with these mailbox abstractions. This artifact contains documentation on how to use analysis and on how to reproduce the results presented in the companion paper.",
-  keywords = "static analysis, abstraction, abstract interpretation, actors, mailbox",
-  author   = "Quentin Sti{\'e}venart and Jens Nicolay and {De Meuter}, Wolfgang and {De Roover}, Coen",
-  year     = "2017",
-  doi      = "10.4230/DARTS.3.2.11",
-  language = "English",
+@misc{DBLP:journals/darts/StievenartNMR17,
+  author    = {Quentin Sti{\'{e}}venart and
+               Jens Nicolay and
+               Wolfgang De Meuter and
+               Coen De Roover},
+  title     = {Mailbox Abstractions for Static Analysis of Actor Programs (Artifact)},
+  journal   = {{DARTS}},
+  volume    = {3},
+  number    = {2},
+  pages     = {11:1--11:2},
+  year      = {2017},
+  url       = {https://doi.org/10.4230/DARTS.3.2.11},
+  doi       = {10.4230/DARTS.3.2.11},
+  timestamp = {Mon, 03 Jul 2017 01:00:00 +0200},
+  biburl    = {https://dblp.org/rec/journals/darts/StievenartNMR17.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
 }
 
-
-@inproceedings{6f150759f01d485d91a9e97d6857ef7d,
-  title     = "Mailbox Abstractions for Static Analysis of Actor Programs",
-  abstract  = "Properties such as the absence of errors or bounds on mailbox sizes are hard to deduce statically for actor-based programs. This is because actor-based programs exhibit several sources of unboundedness, in addition to the non-determinism that is inherent to the concurrent execution of actors. We developed a static technique based on abstract interpretation to soundly reason in a finite amount of time about the possible executions of an actor-based program. We use our technique to statically verify the absence of errors in actor-based programs, and to compute upper bounds on the actors' mailboxes. Sound abstraction of these mailboxes is crucial to the precision of any such technique. We provide several mailbox abstractions and categorize them according to the extent to which they preserve message ordering and multiplicity of messages in a mailbox. We formally prove the soundness of each mailbox abstraction, and empirically evaluate their precision and performance trade-offs on a corpus of benchmark programs. The results show that our technique can statically verify the absence of errors for more benchmark programs than the state-of-the-art analysis.",
-  keywords  = "Abstract interpretation, Abstraction, Actors, Mailbox, Static analysis",
-  author    = "Quentin Sti{\'e}venart and Jens Nicolay and {De Meuter}, Wolfgang and {De Roover}, Coen",
-  year      = "2017",
-  month     = "6",
-  day       = "1",
-  doi       = "10.4230/LIPIcs.ECOOP.2017.25",
-  language  = "English",
-  volume    = "74",
-  pages     = "25:1--25:30",
-  editor    = "Peter M{\"u}ller",
-  booktitle = "31st European Conference on Object-Oriented Programming, ECOOP 2017",
-  publisher = "Schloss Dagstuhl - Leibniz-Zentrum f{\"u}r Informatik",
-  address   = "Germany",
+@article{DBLP:journals/smr/NicolaySMR17,
+  author    = {Jens Nicolay and
+               Quentin Sti{\'{e}}venart and
+               Wolfgang De Meuter and
+               Coen De Roover},
+  title     = {Purity analysis for JavaScript through abstract interpretation},
+  journal   = {Journal of Software: Evolution and Process},
+  volume    = {29},
+  number    = {12},
+  year      = {2017},
+  url       = {https://doi.org/10.1002/smr.1889},
+  doi       = {10.1002/smr.1889},
+  timestamp = {Thu, 04 Jan 2018 00:00:00 +0100},
+  biburl    = {https://dblp.org/rec/journals/smr/NicolaySMR17.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
 }
 
-
-@inproceedings{b673484b86d344bbb75bfce69b80b813,
-  title     = "Static Taint Analysis of Event-driven Scheme Programs",
-  abstract  = "Event-driven programs consist of event listeners that can be registered dynamically with different types of events. The order in which these events are triggered is, however, non-deterministic. This combination of dynamicity and non-determinism renders reasoning about event-driven applications difficult. For example, it is possible that only a particular sequence of events causes certain program behavior to occur. However, manually determining the event sequence from all possibilities is not a feasible solution. Tool support is in order.We present a static analysis that computes a sound over-approximation of the behavior of an event-driven program. We use this analysis as the foundation for a tool that warns about potential leaks of sensitive information in event-driven Scheme programs. We innovate by presenting developers a regular expression that describes the sequence of events that must be triggered for the leak to occur. We assess precision, recall, and accuracy of the tool’s results on a set of benchmark programs that model the essence of security vulnerabilities found in the literature.",
-  author    = "{De Bleser}, Jonas and Quentin Sti{\'e}venart and Jens Nicolay and {De Roover}, Coen",
-  year      = "2017",
-  month     = "4",
-  day       = "4",
-  language  = "English",
-  pages     = "80--87",
-  booktitle = "Proceedings of the 10th European Lisp Symposium",
-  publisher = "ACM",
+@inproceedings{DBLP:conf/ecoop/StievenartNMR17,
+  author    = {Quentin Sti{\'{e}}venart and
+               Jens Nicolay and
+               Wolfgang De Meuter and
+               Coen De Roover},
+  editor    = {Peter M{\"{u}}ller},
+  title     = {Mailbox Abstractions for Static Analysis of Actor Programs},
+  booktitle = {31st European Conference on Object-Oriented Programming, {ECOOP} 2017,
+               June 19-23, 2017, Barcelona, Spain},
+  series    = {LIPIcs},
+  volume    = {74},
+  pages     = {25:1--25:30},
+  publisher = {Schloss Dagstuhl - Leibniz-Zentrum f{\"{u}}r Informatik},
+  year      = {2017},
+  url       = {https://doi.org/10.4230/LIPIcs.ECOOP.2017.25},
+  doi       = {10.4230/LIPIcs.ECOOP.2017.25},
+  timestamp = {Tue, 11 Feb 2020 15:52:14 +0100},
+  biburl    = {https://dblp.org/rec/conf/ecoop/StievenartNMR17.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
 }
 
-
-@inbook{011eef730e554891b40134fe434b586b,
-  title     = "Abstractions for Distributed Event-Driven Applications: Position Paper",
-  abstract  = "The Internet of Things (IoT) requires us to rethink the way distributed event-driven applications are programmed. IoT applications differ from traditional distributed applications on a number of points. First, they are comprised of an order of magnitude more devices that operate within a dynamic network. Second, failure in large dynamic networks is no longer an exceptional state but a given and thus needs to be part of the core semantics when programming such networks. Third, the hardware in these networks is not homogeneous so that a common software stack is impossible. We believe that contemporary event-driven languages do not offer appropriate abstractions to write IoT applications. We propose a novel computational model for programming IoT applications by identifying four key abstractions for designating network nodes and handle failures that facilitate writing large-scale IoT applications.",
-  keywords  = "Distributed programming, Internet of things, Runtimes",
-  author    = "{De Troyer}, Christophe and Jens Nicolay and {De Meuter}, Wolfgang and Christophe Scholliers",
-  year      = "2017",
-  month     = "4",
-  day       = "3",
-  doi       = "10.1145/3079368.3079395",
-  language  = "English",
-  volume    = "Part F129681",
-  editor    = "Theo D'Hondt and Sartor, {Jennifer B.} and {De Meuter}, Wolfgang",
-  booktitle = "Programming 2017 - Companion to the 1st International Conference on the Art, Science and Engineering of Programming",
-  publisher = "ACM",
-  edition   = "1",
+@inproceedings{DBLP:conf/els/BleserSNR17,
+  author    = {Jonas De Bleser and
+               Quentin Sti{\'{e}}venart and
+               Jens Nicolay and
+               Coen De Roover},
+  editor    = {Alberto Riva},
+  title     = {Static Taint Analysis of Event-driven Scheme Programs},
+  booktitle = {Proceedings of the 10th European Lisp Symposium {(ELS} 2017), Brussels,
+               Belgium, April 3-4, 2017},
+  pages     = {80--87},
+  publisher = {{ELSAA}},
+  year      = {2017},
+  url       = {https://european-lisp-symposium.org/static/proceedings/2017.pdf\#section.0.14},
+  timestamp = {Wed, 13 Nov 2019 17:59:17 +0100},
+  biburl    = {https://dblp.org/rec/conf/els/BleserSNR17.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
 }
 
-
-@article{d476ab6f041f473ca64b9e652ebefeb6,
-  title     = "Implementing a Performant Scheme Interpreter for the Web in asm.js",
-  abstract  = "This paper presents the implementation of an efficient interpreter for a Scheme-like language using manually written asm.js code. The asm.js specification defines an optimizable subset of JavaScript which has already served well as a compilation target for web applications where performance is critical. However, its usage as a human-writable language that can be integrated into existing projects to improve performance has remained largely unexplored. We therefore apply this strategy to optimize the implementation of an interpreter. We also discuss the feasibility of this approach, as writing asm.js by hand is generally not its recommended use-case. We therefore present a macro system to solve the challenges we encounter. The resulting interpreter is compared to the original C implementation and its compiled equivalent in asm.js. This way, we evaluate whether manual integration with asm.js provides the necessary performance to bring larger applications and run-times to the web. We also refactor our implementation to assess how more JavaScript code can cohabit with asm.js code, improving maintainability of the implementation while preserving near-native performance. In the case of our interpreter, this improved maintainability enables adding more complex optimizations. We investigate the addition of function inlining, for which we validate the performance gain.",
-  keywords  = "asm.js, Interpreters, JavaScript, Optimization, Performance",
-  author    = "{Van Es}, Noah and Quentin Sti{\'e}venart and Jens Nicolay and Theo D'Hondt and {De Roover}, Coen",
-  year      = "2017",
-  month     = "9",
-  doi       = "10.1016/j.cl.2017.02.002",
-  language  = "English",
-  volume    = "49",
-  pages     = "62--81",
-  journal   = "Computer Languages, Systems and Structures",
-  issn      = "1477-8424",
-  publisher = "Elsevier Limited",
+@inproceedings{DBLP:conf/oopsla/TroyerNM17,
+  author    = {Christophe De Troyer and
+               Jens Nicolay and
+               Wolfgang De Meuter},
+  editor    = {Guido Salvaneschi and
+               Wolfgang De Meuter and
+               Patrick Eugster and
+               Lukasz Ziarek},
+  title     = {First-class reactive programs for {CPS}},
+  booktitle = {Proceedings of the 4th {ACM} {SIGPLAN} International Workshop on Reactive
+               and Event-Based Languages and Systems, Vancouver, BC, Canada, October
+               23, 2017},
+  pages     = {21--26},
+  publisher = {{ACM}},
+  year      = {2017},
+  url       = {https://doi.org/10.1145/3141858.3141862},
+  doi       = {10.1145/3141858.3141862},
+  timestamp = {Tue, 06 Nov 2018 16:57:16 +0100},
+  biburl    = {https://dblp.org/rec/conf/oopsla/TroyerNM17.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
 }
 
-
-@article{f1aef97f46674da08c491d1fec1b06c7,
-  title     = "Purity analysis for JavaScript through abstract interpretation",
-  abstract  = "We present a static analysis for determining whether and to what extent functions in JavaScript programs are pure. To this end, the analysis classifies functions as pure functions, observers, or procedures. A function is pure if none of its executions generate or depend upon externally observable side effects. A function is an observer as soon as one of its executions depends on an external side effect, but none of its executions generate observable side effects. Otherwise, the function is classified as a procedure. Function executions and associated callers are found by traversing all reachable function execution contexts on the call stack at the point where an effect occurs. Our approach is based on a flow analysis that, in addition to computing traditional control and value flow, keeps track of read and write effects. To increase the precision of our purity analysis, we combine it with an intraprocedural analysis that determines freshness of variables and objects. We formalize the core aspects of our technique and discuss its implementation and results on common JavaScript benchmarks. Results show that our approach is capable of determining function purity in the presence of higher-order functions, dynamic property expressions, and prototypal inheritance. When compared with existing purity analyses, we find that our approach is as precise or more precise than the existing analyses.",
-  keywords  = "abstract interpretation, freshness analysis, JavaScript, purity analysis, side effect analysis",
-  author    = "Jens Nicolay and Quentin Sti{\'e}venart and {De Meuter}, Wolfgang and {De Roover}, Coen",
-  year      = "2017",
-  month     = "12",
-  doi       = "10.1002/smr.1889",
-  language  = "English",
-  volume    = "29",
-  journal   = "Journal of Software: Evolution and Process",
-  issn      = "2047-7473",
-  publisher = "Wiley",
-  number    = "12",
+@inproceedings{DBLP:conf/programming/TroyerNMS17,
+  author    = {Christophe De Troyer and
+               Jens Nicolay and
+               Wolfgang De Meuter and
+               Christophe Scholliers},
+  editor    = {Jennifer B. Sartor and
+               Theo D'Hondt and
+               Wolfgang De Meuter},
+  title     = {Abstractions for Distributed Event-Driven Applications: Position Paper},
+  booktitle = {Companion to the first International Conference on the Art, Science
+               and Engineering of Programming, Programming 2017, Brussels, Belgium,
+               April 3-6, 2017},
+  pages     = {18:1--18:2},
+  publisher = {{ACM}},
+  year      = {2017},
+  url       = {https://doi.org/10.1145/3079368.3079395},
+  doi       = {10.1145/3079368.3079395},
+  timestamp = {Tue, 06 Nov 2018 16:57:28 +0100},
+  biburl    = {https://dblp.org/rec/conf/programming/TroyerNMS17.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
 }
 
-
-@conference{c0bc14418ad842728449374c41a84a47,
-  title    = "First-class Reactive Programs for CPS: Work in Progress",
-  abstract = "Cyber-Physical Systems (CPS) are comprised of a network ofdevices that vary widely in complexity, ranging from simplesensors to autonomous robots. Traditionally, controlling andsensing these devices happens through API communication,in either push or pull-based fashion. We argue that the computationalpower of these devices is converging to the pointwhere they can do autonomous computations. This allowsapplication programmers to run programs locally on thesensors, thereby reducing the communication and workloadof more central command and control entities.This work introduces the Potato framework that aims tomake programming CPS systems intuitively easy and fast.Potato is based on three essential mechanisms: failure handlingby means of leasing, distribution by means of first-classreactive programs, and intentional retroactive designation ofthe network by means of capabilities and dynamic properties.In this paper we focus on the reactive capabilities of ourframework. Potato enables programmers to create and deployfirst-class reactive programs on CPS devices at run time,abstracting away from the API approach. Each node in thenetwork is equipped with a minimal actor-based middlewarethat can execute first-class reactive programs. We have implementedPotato as a library in Elixir and have used it toimplement several small examples.",
-  author   = "{De Troyer}, Christophe and Jens Nicolay and {De Meuter}, Wolfgang",
-  year     = "2017",
-  month    = "9",
-  day      = "13",
-  language = "English",
-  note     = "null ; Conference date: 22-10-2017 Through 27-10-2017",
-  url      = "https://conf.researchr.org/track/rebls-2017/rebls-2017",
+@inproceedings{DBLP:conf/ccs/NicolaySR16,
+  author    = {Jens Nicolay and
+               Valentijn Spruyt and
+               Coen De Roover},
+  editor    = {Toby C. Murray and
+               Deian Stefan},
+  title     = {Static Detection of User-specified Security Vulnerabilities in Client-side
+               JavaScript},
+  booktitle = {Proceedings of the 2016 {ACM} Workshop on Programming Languages and
+               Analysis for Security, PLAS@CCS 2016, Vienna, Austria, October 24,
+               2016},
+  pages     = {3--13},
+  publisher = {{ACM}},
+  year      = {2016},
+  url       = {https://doi.org/10.1145/2993600.2993612},
+  doi       = {10.1145/2993600.2993612},
+  timestamp = {Tue, 06 Nov 2018 11:07:30 +0100},
+  biburl    = {https://dblp.org/rec/conf/ccs/NicolaySR16.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
 }
 
-
-@conference{342d96ef11504b968636fb94f1b4d580,
-  title    = "Modular Static Analysis of Actor Programs",
-  abstract = "Existing static analyses for actor programs ex- plicitely model all possible execution interleavings. Because the number of interleavings increases exponentially with the number of actors and messages exchanged, such analyses scale poorly. We describe the first modular analysis for actor programs, that analyzes each actor in separation of each other. This analysis over-approximate over the diferent interleavings without explicitly modeling them, rendering it scalable. We demonstrate its enhanced scalability by comparing the analysis of the Savina benchmark suite with a non-modular analysis and our new modular analysis. Our technique succeeds in analyzing all of the Savina benchmarks in a matter of seconds, while the non-modular analysis times out on more than half of these benchmarks. Moreover, we show that the precision of our modular remains on par with the precision of the non-modular analysis.",
-  keywords = "abstract interpretation, actors, static analysis, modular analysis",
-  author   = "Quentin Sti{\'e}venart and Jens Nicolay and {De Roover}, Coen and {De Meuter}, Wolfgang",
-  year     = "2017",
-  month    = "12",
-  day      = "5",
-  language = "English",
-  note     = "BElgian-NEtherlands eVOLution seminar 2017, BENEVOL ; Conference date: 04-12-2017 Through 05-12-2017",
-  url      = "http://ansymore.uantwerpen.be/events/benevol2017",
+@inproceedings{DBLP:conf/sac/EsNSDR16,
+  author    = {Noah Van Es and
+               Jens Nicolay and
+               Quentin Sti{\'{e}}venart and
+               Theo D'Hondt and
+               Coen De Roover},
+  editor    = {Sascha Ossowski},
+  title     = {A performant scheme interpreter in asm.js},
+  booktitle = {Proceedings of the 31st Annual {ACM} Symposium on Applied Computing,
+               Pisa, Italy, April 4-8, 2016},
+  pages     = {1944--1951},
+  publisher = {{ACM}},
+  year      = {2016},
+  url       = {https://doi.org/10.1145/2851613.2851748},
+  doi       = {10.1145/2851613.2851748},
+  timestamp = {Tue, 06 Nov 2018 11:06:49 +0100},
+  biburl    = {https://dblp.org/rec/conf/sac/EsNSDR16.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
 }
 
-
-@conference{4dd1a0e0d0284366b5586ec139f055e6,
-  title    = "Practical dynamic information flow control for client-side web applications",
-  abstract = "User data privacy and protection is a major concern for today’s companies.Software systems are no longer monolithic pieces of code, but an aggregation of code from different parties.Developers often reuse and trust third party code with aim of being more productive.In the context of client-side web applications this situation is particularly dangerous, giving attackers the opportunity to exfiltrate data and compromise user privacy.Current browsers security mechanisms are inadequate to ensure confidentiality policies that arise from the flow of information through web applications.How to control the information flow through the system has been studied during several decades. However, practical implementations are far from the advances in the theory. Today, a large number of approaches are based on static analysis techniques to detect information flows in a program.However, the dynamic characteristics of JavaScript, including its dynamic code evaluation capabilities, makes this kind of analysis too conservative and hence impractical. Dynamic analysis allows tracking information during the program execution.These analysis are usually implemented by means of code instrumentation, i.e. by inserting code that identifies, tracks, and prevents unauthorized information flows.One approach to implement dynamic information flow is by instrumenting a Javascript interpreter. This offers more freedom and control to the analysis implementor.However, this is not a feasible solution in the context of client side web applications due to the large number of existing JavaScript interpreters and versions. In this work we aim to implement a dynamic information flow control mechanism by means of source code instrumentation.We develop a taint analysis to track explicit information flows.To handle implicit flows, we implement the non-sensitive upgrade approach.Our implementation is portable in the sense that we do not rely or change the underline interpreter.As a down side, our approach has a significant impact on the performance of the application.We do not provide formal proofs of our approach.Instead, we verified our implementation on a large number of examples.Also, we evaluated our analysis with respect to challenging Javascript features reported in the related work.Experiments realized so far show that our analysis is transparent to the target program if during the program execution it does not has illegal flow of information.",
-  author   = "{Scull Pupo}, {Angel Luis} and Jens Nicolay and {Gonzalez Boix}, Elisa",
-  year     = "2017",
-  month    = "9",
-  day      = "28",
-  language = "English",
-  note     = "null ; Conference date: 28-09-2017 Through 29-09-2017",
-  url      = "http://vmmeetup.github.io/2017/",
+@inproceedings{DBLP:conf/scala/StievenartNMR16,
+  author    = {Quentin Sti{\'{e}}venart and
+               Jens Nicolay and
+               Wolfgang De Meuter and
+               Coen De Roover},
+  editor    = {Aggelos Biboudis and
+               Manohar Jonnalagedda and
+               Sandro Stucki and
+               Vlad Ureche},
+  title     = {Building a modular static analysis framework in Scala (tool paper)},
+  booktitle = {Proceedings of the 7th {ACM} {SIGPLAN} Symposium on Scala, SCALA@SPLASH
+               2016, Amsterdam, Netherlands, October 30 - November 4, 2016},
+  pages     = {105--109},
+  publisher = {{ACM}},
+  year      = {2016},
+  url       = {https://doi.org/10.1145/2998392.3001579},
+  doi       = {10.1145/2998392.3001579},
+  timestamp = {Tue, 06 Nov 2018 16:59:26 +0100},
+  biburl    = {https://dblp.org/rec/conf/scala/StievenartNMR16.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
 }
 
-
-@inproceedings{2ad7be274d7843d79d983af005c2dbbf,
-  title     = "A Performant Scheme Interpreter in asm.js",
-  abstract  = "This paper presents the implementation of an efficient interpreter for a Scheme-like language using manually written asm.js code. The asm.js specification defines an optimizable subset of JavaScript which has already served well as a compilation target for web applications where performance is critical. However, its usage as a human-writable language that can be integrated into existing projects to improve performance has remained largely unexplored. We therefore apply this strategy to optimize the implementation of an interpreter. We also discuss the feasibility of this approach, as writing asm.js by hand is generally not its recommended use-case. We therefore present a macro system to solve the challenges we encounter. The resulting interpreter is compared to the original C implementation and its compiled equivalent in asm.js. This way, we evaluate whether manual integration with asm.js provides the necessary performance to bring larger applications and runtimes to the web.",
-  keywords  = "asm.js, JavaScript, interpreters, optimization, performance",
-  author    = "{Van Es}, Noah and Jens Nicolay and Quentin Sti{\'e}venart and Theo D'Hondt and {De Roover}, Coen",
-  year      = "2016",
-  language  = "English",
-  isbn      = "978-1-4503-3739-7",
-  pages     = "1944--1951",
-  booktitle = "Proceedings of the 31st ACM Symposium on Applied Computing, Programming Languages Track (SAC 2016)",
-  publisher = "ACM",
+@inproceedings{DBLP:conf/icse/StievenartNMR15,
+  author    = {Quentin Sti{\'{e}}venart and
+               Jens Nicolay and
+               Wolfgang De Meuter and
+               Coen De Roover},
+  editor    = {Antonia Bertolino and
+               Gerardo Canfora and
+               Sebastian G. Elbaum},
+  title     = {Poster: Static Analysis of Concurrent Higher-Order Programs},
+  booktitle = {37th {IEEE/ACM} International Conference on Software Engineering,
+               {ICSE} 2015, Florence, Italy, May 16-24, 2015, Volume 2},
+  pages     = {821--822},
+  publisher = {{IEEE} Computer Society},
+  year      = {2015},
+  url       = {https://doi.org/10.1109/ICSE.2015.265},
+  doi       = {10.1109/ICSE.2015.265},
+  timestamp = {Wed, 16 Oct 2019 14:14:49 +0200},
+  biburl    = {https://dblp.org/rec/conf/icse/StievenartNMR15.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
 }
 
-
-@inproceedings{e9e0b661e34b416995a14cdcb6ddeb31,
-  title     = "Building a Modular Static Analysis Framework in Scala (Tool Paper)",
-  abstract  = "We present SCALA-AM, a framework for implementing static analyses as systematically abstracted abstract machines. Analyses implemented on top of SCALA-AM separate operational semantics from machine abstraction concerns. This modularity facilitates varying the analyzed language and the applied abstraction method in an analysis. We describe the design of our framework and demonstrate its use in a static analysis for the DOT calculus. We conclude with a tour of the features of Scala through which SCALA-AM achieves its modularity.",
-  author    = "Quentin Sti{\'e}venart and Jens Nicolay and {De Meuter}, Wolfgang and {De Roover}, Coen",
-  year      = "2016",
-  doi       = "10.1145/2998392.3001579",
-  language  = "English",
-  isbn      = "978-1-4503-4648-1",
-  pages     = "105--109",
-  booktitle = "Proceedings of the 7th ACM SIGPLAN Symposium on Scala",
+@inproceedings{DBLP:conf/oopsla/VandercammenNMK15,
+  author    = {Maarten Vandercammen and
+               Jens Nicolay and
+               Stefan Marr and
+               Joeri De Koster and
+               Theo D'Hondt and
+               Coen De Roover},
+  editor    = {Harry Xu and
+               Walter Binder},
+  title     = {A formal foundation for trace-based {JIT} compilers},
+  booktitle = {Proceedings of the 13th International Workshop on Dynamic Analysis,
+               WODA@SPLASH 2015, Pittsburgh, PA, USA, October 26, 2015},
+  pages     = {25--30},
+  publisher = {{ACM}},
+  year      = {2015},
+  url       = {https://doi.org/10.1145/2823363.2823369},
+  doi       = {10.1145/2823363.2823369},
+  timestamp = {Tue, 06 Nov 2018 16:57:16 +0100},
+  biburl    = {https://dblp.org/rec/conf/oopsla/VandercammenNMK15.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
 }
 
-
-@inbook{263a8d7e30294458a03359b50e4a1b5b,
-  title     = "Static Detection of User-specified Security Vulnerabilities in Client-side JavaScript",
-  abstract  = "Program defects tend to surface late in the development of programs, and they are hard to detect.Security vulnerabilities are particularly important defects to detect.They may cause sensitive information to be leaked or the system on which the program is executed to be compromised.Existing approaches that use static analysis to detect security vulnerabilities in source code are often limited to a predetermined set of encoded security vulnerabilities.Although these approaches support a decent number of vulnerabilities by default,they cannot be configured for detecting vulnerabilities that are specific to the application domain of the analyzed program.In this paper we present JS-QL, a framework for detecting user-specified security vulnerabilities in JavaScript applications statically.The framework makes use of an internal domain-specific query language hosted by JavaScript.JS-QL queries are based on regular path expressions, enabling users to express queries over a flow graph in a declarative way.The flow graph represents the run-time behavior of a program and is computed by a static analysis.We evaluate JS-QL by expressing 9 security vulnerabilities supported by existing work and comparing the resulting specifications.We conclude that the combination of static analysis and regular path expressions lends itself well to the detection of user-specified security vulnerabilities.",
-  keywords  = "security, static analysis, JavaScript",
-  author    = "Jens Nicolay and Valentijn Spruyt and {De Roover}, Coen",
-  year      = "2016",
-  month     = "10",
-  language  = "English",
-  isbn      = "978-1-4503-4574-3",
-  pages     = "3--13",
-  booktitle = "Proceedings of the 2016 ACM Workshop on Programming Languages and Analysis for Security",
-  publisher = "ACM",
+@inproceedings{DBLP:conf/ppdp/StievenartNMR15,
+  author    = {Quentin Sti{\'{e}}venart and
+               Jens Nicolay and
+               Wolfgang De Meuter and
+               Coen De Roover},
+  editor    = {Moreno Falaschi and
+               Elvira Albert},
+  title     = {Detecting concurrency bugs in higher-order programs through abstract
+               interpretation},
+  booktitle = {Proceedings of the 17th International Symposium on Principles and
+               Practice of Declarative Programming, Siena, Italy, July 14-16, 2015},
+  pages     = {232--243},
+  publisher = {{ACM}},
+  year      = {2015},
+  url       = {https://doi.org/10.1145/2790449.2790530},
+  doi       = {10.1145/2790449.2790530},
+  timestamp = {Tue, 06 Nov 2018 00:00:00 +0100},
+  biburl    = {https://dblp.org/rec/conf/ppdp/StievenartNMR15.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
 }
 
-
-@conference{72f0c63fff934b50bec8a6172cf6f71c,
-  title    = "Declaratively Specifying Security Policies For Web Applications",
-  author   = "{Scull Pupo}, {Angel Luis} and Jens Nicolay and {Gonzalez Boix}, Elisa",
-  year     = "2016",
-  language = "English",
-  note     = "Meta 2016 : Workshop on Meta-Programming Techniques and Reflection ; Conference date: 30-09-2016 Through 31-10-2016",
+@inproceedings{DBLP:conf/scam/NicolayNRM15,
+  author    = {Jens Nicolay and
+               Carlos Noguera and
+               Coen De Roover and
+               Wolfgang De Meuter},
+  editor    = {Michael W. Godfrey and
+               David Lo and
+               Foutse Khomh},
+  title     = {Detecting function purity in JavaScript},
+  booktitle = {15th {IEEE} International Working Conference on Source Code Analysis
+               and Manipulation, {SCAM} 2015, Bremen, Germany, September 27-28, 2015},
+  pages     = {101--110},
+  publisher = {{IEEE} Computer Society},
+  year      = {2015},
+  url       = {https://doi.org/10.1109/SCAM.2015.7335406},
+  doi       = {10.1109/SCAM.2015.7335406},
+  timestamp = {Wed, 16 Oct 2019 14:14:55 +0200},
+  biburl    = {https://dblp.org/rec/conf/scam/NicolayNRM15.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
 }
 
-
-@conference{761ce04b0b5d4178b8977c62c04c95cf,
-  title    = "Building a Modular Static Analysis Framework in Scala (Tool Paper)",
-  author   = "Quentin Sti{\'e}venart and Jens Nicolay and {De Meuter}, Wolfgang and {De Roover}, Coen",
-  year     = "2016",
-  language = "English",
-  note     = "null ; Conference date: 30-10-2016 Through 04-11-2016",
-  url      = "http://2016.splashcon.org/",
+@inproceedings{DBLP:conf/scam/NicolayNRM13,
+  author    = {Jens Nicolay and
+               Carlos Noguera and
+               Coen De Roover and
+               Wolfgang De Meuter},
+  title     = {Determining dynamic coupling in JavaScript using object type inference},
+  booktitle = {13th {IEEE} International Working Conference on Source Code Analysis
+               and Manipulation, {SCAM} 2013, Eindhoven, Netherlands, September 22-23,
+               2013},
+  pages     = {126--135},
+  publisher = {{IEEE} Computer Society},
+  year      = {2013},
+  url       = {https://doi.org/10.1109/SCAM.2013.6648193},
+  doi       = {10.1109/SCAM.2013.6648193},
+  timestamp = {Wed, 16 Oct 2019 14:14:55 +0200},
+  biburl    = {https://dblp.org/rec/conf/scam/NicolayNRM13.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
 }
 
-
-@conference{30302e6dd66946e8ae7e2ad36f7368e2,
-  title    = "Declaratively Specifying Security Policies For Web Applications",
-  keywords = "JavaScript, Security, Web Applications, access control policy",
-  author   = "{Scull Pupo}, {Angel Luis} and Jens Nicolay and {Gonzalez Boix}, Elisa",
-  year     = "2016",
-  month    = "10",
-  day      = "30",
-  language = "English",
-  note     = "null ; Conference date: 30-10-2016 Through 04-11-2016",
-  url      = "http://2016.splashcon.org/",
+@inproceedings{DBLP:conf/aosd/Nicolay12,
+  author    = {Jens Nicolay},
+  editor    = {Robert Hirschfeld and
+               {\'{E}}ric Tanter and
+               Kevin J. Sullivan and
+               Richard P. Gabriel},
+  title     = {Tearing down the multicore barrier for web applications},
+  booktitle = {Companion Volume of the 11th International Conference on Aspect-oriented
+               Software Development, {AOSD} 2012, Potsdam, Germany, March 25-30,
+               2012},
+  pages     = {17--18},
+  publisher = {{ACM}},
+  year      = {2012},
+  url       = {https://doi.org/10.1145/2162110.2162124},
+  doi       = {10.1145/2162110.2162124},
+  timestamp = {Tue, 06 Nov 2018 00:00:00 +0100},
+  biburl    = {https://dblp.org/rec/conf/aosd/Nicolay12.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
 }
 
-
-@inproceedings{668ded30b73e441cb888d6957ae03e4c,
-  title     = "Detecting Concurrency Bugs in Higher-Order Programs through Abstract Interpretation",
-  abstract  = "Manually detecting bugs in concurrent programs is hard due to the myriad of thread interleavings that needs to be accounted for. Higher-order programming features only exacerbate this difficulty. The need for tool support therefore increases as these features become more widespread. We investigate the \PCESK abstract machine as the foundation for tool support for detecting concurrency bugs. This abstract interpreter analyzes multi-threaded, higher-order programs with shared-store concurrency and a compare-and-swap synchronization primitive. In this paper, we evaluate two different approaches to reduce the size of the state space explored by the abstract interpreter. First, we integrate abstract garbage collection into the abstract interpreter, and we observe that it does not reduce the state space as expected. We then evaluate the impact of adding first-class support for locks on the machine's client analyses. To this end, we compare a cas-based and a lock-based formulation of race condition and deadlock detection analyses. We show that adding first-class support for locks not only significantly reduces the number of abstract program states that need to be explored, but also simplifies formulating the client analyses.",
-  author    = "Quentin Stievenart and Jens Nicolay and {De Meuter}, Wolfgang and {De Roover}, Coen",
-  year      = "2015",
-  language  = "English",
-  pages     = "232--243",
-  booktitle = "Proceedings of the 17th International Symposium on Principles and Practice of Declarative Programming",
-  publisher = "ACM SIGPLAN",
+@inproceedings{DBLP:conf/scam/NicolayRMJ11,
+  author    = {Jens Nicolay and
+               Coen De Roover and
+               Wolfgang De Meuter and
+               Viviane Jonckers},
+  title     = {Automatic Parallelization of Side-Effecting Higher-Order Scheme Programs},
+  booktitle = {11th {IEEE} Working Conference on Source Code Analysis and Manipulation,
+               {SCAM} 2011, Williamsburg, VA, USA, September 25-26, 2011},
+  pages     = {185--194},
+  publisher = {{IEEE} Computer Society},
+  year      = {2011},
+  url       = {https://doi.org/10.1109/SCAM.2011.13},
+  doi       = {10.1109/SCAM.2011.13},
+  timestamp = {Wed, 16 Oct 2019 14:14:55 +0200},
+  biburl    = {https://dblp.org/rec/conf/scam/NicolayRMJ11.bib},
+  bibsource = {dblp computer science bibliography, https://dblp.org}
 }
 
-
-@inproceedings{149c8429f75a40918fde3fc06e0ed744,
-  title     = "Detecting Function Purity in JavaScript",
-  abstract  = "We present an approach to detect function purity in JavaScript.A function is pure if none of its applications cause observable side-effects.The approach is based on a pushdown flow analysis that besides traditional control and value flow also keeps track of write effects.To increase the precision of our purity analysis, we combine it with an intraprocedural analysis to determine freshness of variables and object references.We formalize the core aspects of our analysis, and discuss our implementation used to analyze several common JavaScript benchmarks. Experiments show that our technique is capable of detecting function purity, even in the presence of higher-order functions, dynamic property expressions, and prototypal inheritance.",
-  keywords  = "static analysis, abstract interpretation, effects, JavaScript",
-  author    = "Jens Nicolay and {Noguera Garcia}, {Carlos Francisco} and {De Roover}, Coen and {De Meuter}, Wolfgang",
-  year      = "2015",
-  month     = "9",
-  language  = "English",
-  isbn      = "9781467375306",
-  pages     = "101--110",
-  booktitle = "Proceedings of the 15th IEEE Working Conference on Source Code Analysis and Manipulation (SCAM)",
-  publisher = "IEEE",
-}
-
-
-@inbook{eccfd30fdb5840e38246f784259afba0,
-  title     = "A formal foundation for trace-based JIT compilers",
-  abstract  = "Trace-based JIT compilers identify frequently executed program paths at run-time and subsequently record, compile and optimize their execution. In order to improve the performance of the generated machine instructions, JIT compilers heavily rely on dynamic analysis of the code. Existing work treats the components of a JIT compiler as a monolithic whole, tied to particular execution semantics. We propose a formal framework that facilitates the design and implementation of a tracing JIT compiler and its accompanying dynamic analyses by decoupling the tracing, optimization, and interpretation processes. This results in a framework that is more configurable and extensible than existing formal tracing models. We formalize the tracer and interpreter as two abstract state machines that communicate through a minimal, well-defined interface. Developing a tracing JIT compiler becomes possible for arbitrary interpreters that implement this interface. The abstract machines also provide the necessary hooks to plug in custom analyses and optimizations.",
-  keywords  = "tracing JIT compilation, operational semantics, dynamic analysis, just-in-time compilation, virtual machine",
-  author    = "Maarten Vandercammen and Jens Nicolay and Stefan Marr and {De Koster}, {Joeri Jean-Marie} and Theo D'Hondt and {De Roover}, Coen",
-  year      = "2015",
-  month     = "10",
-  day       = "26",
-  doi       = "10.1145/2823363.2823369",
-  language  = "English",
-  isbn      = "978-1-4503-3909-4",
-  pages     = "25--30",
-  booktitle = "Proceedings of the 13th International Workshop on Dynamic Analysis (WODA)",
-  publisher = "ACM",
-}
-
-
-@conference{36b80e6219304cfdbbef425d74583cc2,
-  title    = "A Formal Foundation for Trace-Based JIT Compilation",
-  author   = "Maarten Vandercammen and Jens Nicolay and {De Roover}, Coen",
-  year     = "2015",
-  month    = "10",
-  day      = "28",
-  language = "English",
-  note     = "SPLASH 2015 ; Conference date: 23-10-2014 Through 30-10-2014",
-}
-
-
-@conference{f46bcc9144194c10b8fcc9986f66b56b,
-  title    = "Static Analysis of Concurrent Higher-Order Programs",
-  abstract = "Few static analyses support concurrent higher-order programs. Tools fordetecting concurrency bugs such as deadlocks and race conditions are nonethelessinvaluable to developers. Concurrency can be implemented using a variety ofmodels, each supported by different synchronization primitives. Using thisposter, we present an approach for analyzing concurrent higher-order programs ina precise manner through abstract interpretation. We instantiate the approachfor two static analyses that are capable of detecting deadlocks and raceconditions in programs that rely either on compare-and-swap (cas), oron conventional locks for synchronization. We observe few false positives andfalse negatives on a corpus of small concurrent programs, with better resultsfor the lock-based analyses. We also observe that these programs lead to asmaller state space to be explored by the analyses. Our results show that thechoice of synchronization primitives supported by an abstract interpreter has animportant impact on the complexity of the static analyses performed with thisabstract interpreter.",
-  keywords = "static analysis, abstract interpretation, concurrency, deadlocks, race conditions",
-  author   = "Quentin Stievenart and Jens Nicolay and {De Meuter}, Wolfgang and {De Roover}, Coen",
-  year     = "2015",
-  language = "English",
-  note     = "ICSE 2015 ; Conference date: 16-05-2015 Through 24-05-2015",
-}
-
-
-@conference{c92624cb66634130889c34dd6176504c,
-  title    = "Towards Tracking Thread Interferences during Abstract Interpretation of Concurrent Programs",
-  abstract = "Static analyses that build upon the P(CEK⋆)S approach to abstract inter- pretation [3] represent as interpreter states each thread separately with a single shared store. Such analyses, however, are not necessarily tied to the shared- memory concurrency model. The P(CEK⋆)S machine is sufficiently general to support others, as we have done in [4], without changing the state space explo- ration mechanics of the abstract interpreter.However, this technique builds a state graph over-approximating the pro- gram’s behavior by taking into account every possible interleaving, and is there- fore subject to the state explosion problem. One possible solution is partial- order reduction (POR) [1], which uses independence of transitions to discard states during analysis time. We investigate an alternative that tracks thread- local accesses as well as interferences between shared-memory accesses in order to discard interleavings not influencing the program’s behavior. By adding infor- mation about memory accesses inside the states, and assuming threads do not interfere until proven otherwise, it would be possible to discard interleavings at analysis-time (when generating the graph). Such a technique requires part of the analysis being re-run when new interference information is discovered, similarly to Johnson’s memoization technique [2].In this poster, we present our plan of adapting POR to abstract interpreta- tion, of formalizing the thread-interference tracking technique, and of comparing the reduction performed by each technique. Our goal is to scale abstract inter- pretation of concurrent programs, supporting various concurrency models. This would enable further static analyses and tool support for concurrent programs.",
-  keywords = "abstract interpretation, static analysis, partial order reduction, concurrency",
-  author   = "Quentin Sti{\'e}venart and Jens Nicolay and {De Roover}, Coen and {De Meuter}, Wolfgang",
-  year     = "2015",
-  language = "English",
-  note     = "ECOOP 2015: European Conference on Object-Oriented Programming ; Conference date: 05-07-2015 Through 10-07-2015",
-}
-
-
-@inproceedings{95cfda13a06b4055b09ec63cab0e25e6,
-  title     = "Determining Coupling In JavaScript Using Object Type Inference",
-  abstract  = "Coupling in an object-oriented context is often defined in terms of access to instance variables and methods of other classes. JavaScript, however, lacks static type information and classes, and instead features a flexible object system with prototypal inheritance. In order to determine coupling in JavaScript, we infer object types based on abstract interpretation of a program. Type inference depends on both structure and behavior of objects, and common patterns for expressing classes and modules are supported. We approximate a set of accessed types per function, and classify every access as either local or foreign. Examples demonstrate that our object type inference, together with some additional heuristics concerning property access, enable determining coupling in JavaScript in a meaningful way.",
-  keywords  = "JavaScript, Static Analysis, Type Inference, Coupling, Metrics",
-  author    = "Jens Nicolay and {Noguera Garcia}, {Carlos Francisco} and {De Roover}, Coen and {De Meuter}, Wolfgang",
-  year      = "2013",
-  month     = "9",
-  day       = "22",
-  language  = "English",
-  isbn      = "9781467357388",
-  series    = "Proceedings of the 13th International Working Conference on Source Code Analysis and Manipulation (SCAM 2013)",
-  publisher = "IEEE",
-  pages     = "126--135",
-  booktitle = "Proceedings of the 13th International Working Conference on Source Code Analysis and Manipulation (SCAM 2013)",
-}
-
-
-@inproceedings{5d4ab24f5c8340418232c82d054c7b2f,
-  title     = "Modularity and Conventions for Maintainable Concurrent Language Implementations",
-  abstract  = "For a fruitful discussion at the MISS'2012 workshop, we did the exercise to review what we have learned in recent years from implementing languages for parallel and concurrent programming. Our goal for this collective case study is to identify the approaches used to facilitate correctness and maintainability of our implementations. The main questions we ask in our case study are: What guides modularization? Are informal approaches used to facilitate correctness? Are concurrency concerns modularized? And finally, where is language support lacking mostly? The subjects of our case study are AmbientTalk, SLIP, and the RoarVM. All three language implementations evolved over the years and are the foundation of our language and VM research as well as our teaching program. The evolution over the years enables us to look back at specific experiments to understand the impact of concurrency on modularity. We conclude from our review that concurrency concerns are one of the strongest drivers when it comes to defining module boundaries. It can be helpful when languages offer sophisticated modularization constructs, however, with respect to concurrency, other language features are of greater importance. Furthermore, tool support that enables remodularization taking concurrency invariants into account would be of great value.",
-  keywords  = "modularity, concurrency, virtual machines",
-  author    = "Stefan Marr and Jens Nicolay and {Van Cutsem}, Tom and Theo D'Hondt",
-  year      = "2012",
-  month     = "3",
-  language  = "English",
-  isbn      = "978-1-4503-1217-2",
-  booktitle = "Proceedings of the 2nd Workshop on Modularity In Systems Software (MISS'2012)",
-}
-
-
-@inproceedings{3bf3f9cf2dca4be58eac2b6ae85fcbca,
-  title     = "Tearing down the multicore barrier for web applications",
-  abstract  = "We are being confronted with two phenomena that will greatly influence the way people experience the internet. On one hand the browser, with JavaScript as embedded programming language, is getting more important as application delivery platform. On the other hand we are confronted with the multicore revolution. Both desktop machines and mobile devices are already equipped with processors that contain multiple cores. Applications that take advantage of the underlying parallel hardware are able to execute tasks in parallel, which benefits the performance and responsiveness of those applications. Despite the fact that many desktop applications already make use of multiple cores during their execution, the multicore revolution has mostly ignored web applications, leaving the potentential processing power on the client-side virtually unused. To keep up with the demand for ever increasing performance coupled to acceptable response times, browser applications will have to make use of multiple cores during execution. This is possible by designing them with concurrency in mind.",
-  keywords  = "concurrency, parallelism, modularity, JavaScript, refactoring, static analysis",
-  author    = "Jens Nicolay",
-  year      = "2012",
-  month     = "4",
-  day       = "1",
-  language  = "English",
-  isbn      = "978-1-4503-1222-6",
-  pages     = "17--18",
-  booktitle = "Proceedings of the 11th annual international conference on Aspect-oriented Software Development Companion",
-  publisher = "ACM",
-}
-
-@inproceedings{197f29a2baee4826a8b173f91388c82d,
-  title     = "Automatic Parallelization of Side-Effecting Higher-Order Scheme Programs.",
-  abstract  = "The multi-core revolution heralds a challenging era for software maintainers. Manually parallelizing large sequential code bases is often infeasible. In this paper, we present a program transformation that automatically parallelizes real-life Scheme programs. The transformation has to be instantiated with an interprocedural dependence analysis that exposes parallelization opportunities in a sequential program. To this end, we extended a state-of-the art analysis that copes with higher-order procedures and side effects. Our parallelizing transformation exploits all opportunities for parallelization that are exposed by the dependence analysis. Experiments demonstrate that this brute-force approach realizes scalable speedups in certain benchmarks, while others would benefit from a more selective parallelization.",
-  keywords  = "parallelization, static analysis, program transformation",
-  author    = "Jens Nicolay and {De Roover}, Coen and {De Meuter}, Wolfgang and Viviane Jonckers",
-  year      = "2011",
-  language  = "English",
-  isbn      = "9781457709326",
-  pages     = "185--194",
-  booktitle = "Proceedings of the 11th International Working Conference on Source Code Analysis and Manipulation (SCAM 2011)",
-}

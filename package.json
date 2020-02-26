@@ -19,5 +19,9 @@
   "homepage": "https://github.com/jensnicolay/academic#readme",
   "devDependencies": {
     "@11ty/eleventy": "^0.10.0"
+  },
+  "dependencies": {
+    "bibtex-parse": "^2.0.0",
+    "tailwindcss": "^1.2.0"
   }
 }

@@ -1,0 +1,45 @@
+---
+layout: layout.njk
+title: Publications
+---
+
+<h2>Journal Articles</h2>
+<ol>
+{% for publication in publications %}
+  {% if publication.type === "article" %}
+  <li>
+    <div><b>{{ publication.TITLE }}</b></div>
+    <div>{{ publication.AUTHOR }}</div>
+    <div>{{ publication.SERIES }}</div>
+    <div>{{ publication.JOURNAL }}</div>
+    <div>{{ publication.BOOKTITLE }} </div>
+  </li>
+  {% endif %}
+{% endfor %}
+</ol>
+
+<h2>Conference and Workshop Papers</h2>
+<ol>
+  {% for publication in publications %}
+    {% if publication.type === "inproceedings" %}
+    <li>
+      <div><b>{{ publication.TITLE }}</b></div>
+      <div>{{ publication.AUTHOR }}</div>
+      <div>{{ publication.BOOKTITLE }}</div>
+    </li>
+    {% endif %}
+  {% endfor %}
+</ol>
+
+
+<h2>Other</h2>
+<ol>
+  {% for publication in publications %}
+    {% if (publication.type !== "article") and (publication.type !== "inproceedings") %}
+    <li>
+      <div><b>{{ publication.TITLE }}</b></div>
+      <div>{{ publication.AUTHOR }}</div>
+    </li>
+    {% endif %}
+  {% endfor %}
+</ol>
