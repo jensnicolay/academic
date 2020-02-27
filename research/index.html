@@ -3,9 +3,10 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.min.css">    <title>Research - Jens Nicolay</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/kognise/water.css@latest/dist/light.min.css">
+    <title>Research - Jens Nicolay</title>
   </head>
-  <body class="min-h-screen bg-gray-100">
+  <body>
     <div>
       <a href="/academic/">Home</a> | 
       <a href="/academic/teaching">Teaching</a> | 
@@ -17,6 +18,10 @@
     <h1>
       Research
     </h1>
-    
+    <p>My doctoral research and work as a postdoc has mainly focused on <strong>program analysis</strong> with <strong>security</strong> as an important application. These are broad research topics for which there still is much room for improving the state of the art. I want to continue these two intertwined lines of research but with new and distinct research activities.</p>
+<p>I want to advance the state of the art in <strong>incremental static analysis</strong> of higher-order programs with mutable state. Analyses expressed as abstract machine evaluators are typically expensive to compute, especially when soundness and precision are important considerations. I therefore investigate the technique of “storeless” semantics to improve the performance of these types of analyses. This requires an abstract machine that can reason over its own output while producing it. I also explore Datalog for declaratively specifying and performing static program analysis. My goal is to equip a Datalog engine with the desired properties (incrementalism, parallelism, …), so that any analysis running on this engine inherits these properties. A major challenge would be to support incrementality in not only the input program, but also in the analysis rules themself. This would make it possible to incrementally compute the impact of for example changing the precision of the analysis.</p>
+<p>I investigate static and dynamic analysis techniques for supporting <strong>application-level security for cloud and web applications</strong>. Using performant static analysis I want to realize the vision of Continuous Security Testing (CST), in which static security analysis is continuously applied to programs when they change (due to commits or edits in an IDE). My hypothesis is that precise incremental and parallel analysis is required to offer feedback to developers in a timely fashion, so that the analysis time remains proportional to the size of the program change. Static application security testing has to be combined with runtime application security protection. Therefore, starting from a declarative security analysis specification, I examine how to derive both the static and the dynamic analysis components from a specification without duplicating any effort or code.</p>
+<p>I also started research on <strong>software engineering for blockchain</strong>, because there are still many challenges that hinder the adoption of blockchain as a technological foundation for building applications that require a high degree of security, reliability, privacy, and trust. I want to facilitate the integration of and interaction with distributed ledger technology (DLT) in software applications by treating ledgers as a reactive component, because a reactive, event-driven style of development is already widely adopted and well understood by developers. An important and related research question is how DLT can be made to scale to the expected hundreds of billions of event-consuming and event-emitting IoT devices in the not-so-far future. For integration of DLT in new and existing OO applications, I want to investigate how, similar to Object-Relational mappings, objects and their methods can be mapped onto blocks and smart contracts in a blockchain.</p>
+
   </body>
 </html>
