@@ -16,4 +16,8 @@ title: Teaching
 
 ### Principles of Object-Oriented Languages
 
+### Interpretation of Computer Programs 2
+Teaching assistant.
+
 ### Software Engineering
+Teaching assistant.

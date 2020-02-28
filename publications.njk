@@ -11,8 +11,7 @@ title: Publications
     <div><b>{{ publication.TITLE }}</b></div>
     <div>{{ publication.AUTHOR }}</div>
     <div>{{ publication.SERIES }}</div>
-    <div>{{ publication.JOURNAL }}</div>
-    <div>{{ publication.BOOKTITLE }} </div>
+    <div>{{ publication.JOURNAL }}, {{ publication.YEAR }}</div>
   </li>
   {% endif %}
 {% endfor %}
@@ -27,6 +26,7 @@ title: Publications
       <div>{{ publication.AUTHOR }}</div>
       <div>{{ publication.BOOKTITLE }}</div>
     </li>
+    <a href="/publications/{{ publication.key }}">«bib»</a>
     {% endif %}
   {% endfor %}
 </ol>
