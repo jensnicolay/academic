@@ -12,7 +12,7 @@ title: Publications
     <div>{{ publication.AUTHOR }}</div>
     <div>{{ publication.SERIES }}</div>
     <div>{{ publication.JOURNAL }}, {{ publication.YEAR }}</div>
-    <a href="/publications/{{ publication.key }}">«bib»</a>
+    <a href="{{ ('/publications/' + publication.key) | url }}">«bib»</a>
   </li>
   {% endif %}
 {% endfor %}
@@ -26,7 +26,7 @@ title: Publications
       <div><b>{{ publication.TITLE }}</b></div>
       <div>{{ publication.AUTHOR }}</div>
       <div>{{ publication.BOOKTITLE }}</div>
-      <a href="/publications/{{ publication.key }}">«bib»</a>
+      <a href="{{ ('/publications/' + publication.key) | url }}">«bib»</a>
     </li>
     {% endif %}
   {% endfor %}
@@ -40,7 +40,7 @@ title: Publications
     <li>
       <div><b>{{ publication.TITLE }}</b></div>
       <div>{{ publication.AUTHOR }}</div>
-      <a href="/publications/{{ publication.key }}">«bib»</a>
+      <a href="{{ ('/publications/' + publication.key) | url }}">«bib»</a>
   </li>
     {% endif %}
   {% endfor %}
